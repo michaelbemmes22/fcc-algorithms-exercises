@@ -13,3 +13,8 @@ body {
     height: 50px;
     z-index: 10;
 }
+
+li {
+    color: white;
+    cursor: pointer;
+}
