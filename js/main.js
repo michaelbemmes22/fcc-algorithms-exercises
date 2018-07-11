@@ -25,11 +25,11 @@ $(document).ready(function() {
 function getData() {
     $.ajax ({
         type: "GET",
-        url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/overall_team_standings.json",
+        url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/standings.json",
         dataType: 'json',
         async: false,
         headers: {
-            "Authorization": "Basic " + btoa("kmtate" + ":" + "MYSPORTSFEEDS")
+            "Authorization": "Basic " + btoa("kmtate" + ":" + "mkjointrepo2832")
             // "Authorization": "Basic" + "b604851b-0f22-4982-a034-675c03" + ":" + "mkjointrepo2832",
         },
         data: '{ "comment" }',
