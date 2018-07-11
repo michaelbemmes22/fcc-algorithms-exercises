@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('#example').append(example);
 
     // Still trying to figure out the authentication for the ajax call which is currently not working and throwing some bad js errors
-    // getData();
+    getData();
 
 });
 
