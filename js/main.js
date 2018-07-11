@@ -25,16 +25,11 @@ $(document).ready(function() {
 function getData() {
     $.ajax ({
         type: "GET",
-        url: "https://api.mysportsfeeds.com/v2.0/pull/nba/latest/standings.json",
+        url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2018-playoff/overall_team_standings.json",
         dataType: 'json',
         async: false,
         headers: {
-<<<<<<< HEAD
             "Authorization": "Basic " + btoa("b604851b-0f22-4982-a034-675c03" + ":" + "mkjointrepo2832")
-=======
-            "Authorization": "Basic " + btoa("kmtate" + ":" + "MYSPORTSFEEDS")
-            // "Authorization": "Basic" + "b604851b-0f22-4982-a034-675c03" + ":" + "mkjointrepo2832",
->>>>>>> 9b6a9ae91aa830c472d7c7f4e02f363c3cab6a3c
         },
         //data: '{ "comment" }',
         success: function (data){
