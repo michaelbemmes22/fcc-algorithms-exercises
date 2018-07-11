@@ -25,7 +25,7 @@ $(document).ready(function() {
 function getData() {
     $.ajax ({
         type: "GET",
-        url: "https://api.mysportsfeeds.com/v2.0/pull/nba/2017-2018-regular/standings.json",
+        url: "https://api.mysportsfeeds.com/v2.0/pull/nba/latest/standings.json",
         dataType: 'json',
         async: false,
         headers: {
