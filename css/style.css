@@ -7,14 +7,24 @@ body {
     margin-top: 50px;
 }
 
-
-
 .navbar {
-    height: 50px;
-    z-index: 10;
+    background-color: gray;
+    border-bottom: 2px solid red;
 }
 
-li {
+.nav-item {
     color: white;
+    padding: 5px;
+}
+
+.navbar .nav li:hover {
     cursor: pointer;
+}
+
+.standings-header {
+    display: none;
+}
+
+.active {
+    display: flex;
 }

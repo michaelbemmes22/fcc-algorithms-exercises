@@ -4,34 +4,28 @@
 // Just throwing some methods in here but we can architect and modularize later
 // Also decide how we serve up our HTML - i dont know enough about implmenting JSP or templates 
 
-var object = callApi().overallteamstandings.teamstandingsentry;
+var object = callApi();
 
 
 $(document).ready(function() {
 
-    object.forEach((el) => renderTeamRow(el));
+    $('#standings').click(() => renderStandings(object));
 
 })
 
-function renderTeamRow(team) {
-    var rank = team.rank;
-    var teamCity = team.team.City;
-    var teamName = team.team.Name;
-    var gamesBack = team.stats.GamesBack["#text"];
-    var wins = team.stats.Wins["#text"];
-    var losses = team.stats.Losses["#text"];
-
-    var standingsRow = 
+function renderStandings(object) {
+    $('.standings-header').addClass('active');
+    object.forEach((teamEl) => {
+    $('.standings-content').append(
         "<div class=\"row\"> \
-            <div class=\"col-lg-1\">" +rank+ "</div> \
-            <div class=\"col-lg-2\">" +teamCity+ "</div> \
-            <div class=\"col-lg-2\">" +teamName+ "</div> \
-            <div class=\"col-lg-1\">" +gamesBack+ "</div> \
-            <div class=\"col-lg-1\">" +wins+ "</div> \
-            <div class=\"col-lg-1\">" +losses+ "</div> \
-        </div>";
-
-    $('.standings-rows').append(standingsRow);
+            <div class=\"col-sm-1\">" +teamEl.rank+ "</div> \
+            <div class=\"col-sm-2\">" +teamEl.team.City+ "</div> \
+            <div class=\"col-sm-2\">" +teamEl.team.Name+ "</div> \
+            <div class=\"col-sm-1\">" +teamEl.stats.GamesBack["#text"]+ "</div> \
+            <div class=\"col-sm-1\">" +teamEl.stats.Wins["#text"]+ "</div> \
+            <div class=\"col-sm-1\">" +teamEl.stats.Losses["#text"]+ "</div> \
+        </div>"
+    )});
 }
 
 function callApi() {
@@ -43,9 +37,9 @@ function callApi() {
         headers: {
             "Authorization": "Basic " + btoa("b604851b-0f22-4982-a034-675c03" + ":" + "mkjointrepo2832")
         },
-        // data: '{ "comment" }',
+        // data: '{ "comment" }',  --- I am not sure why we need this piece of code but it was messing with the response URL so I commented out
         success: function (data){
             return data;
         }
-    }).responseJSON;
+    }).responseJSON.overallteamstandings.teamstandingsentry;
 }

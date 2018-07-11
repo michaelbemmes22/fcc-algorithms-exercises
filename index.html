@@ -15,27 +15,31 @@
         
         <!-- brought in boostrap cause its a fast way to implement components -->
         <header>
-            <nav class="navbar navbar-light bg-primary fixed-top">
+            <nav class="navbar fixed-top">
                 <div class="container-fluid">
-                    <ul class="nav navbar-nav">
-                        <li>Standings</li>
+                    <ul class="nav">
+                        <li id="teams" class="nav-item">Teams</li>
+                        <li id="standings" class="nav-item">Standings</li>
+                        <li id="stats" class="nav-item">Stats</li>
                     </ul>
                 </div>
             </nav>
         </header>
 
-        <p id="example"></p>
+        <h1>Click standings</h1>
 
-        <div class="standings-wrapper">
-            <div class="row standings-header">
-                <div class="col-lg-1">Rank</div>
-                <div class="col-lg-4"></div>
-                <div class="col-lg-1">GB</div>
-                <div class="col-lg-1">Wins</div>
-                <div class="col-lg-1">Losses</div>
+        <section class="main-content">
+            <div class="container">
+                <div class="row standings-header">
+                    <div class="col-sm-1">Rank</div>
+                    <div class="col-sm-4">Team</div>
+                    <div class="col-sm-1">GB</div>
+                    <div class="col-sm-1">Wins</div>
+                    <div class="col-sm-1">Losses</div>
+                </div>
+                <div class="standings-content"></div>
             </div>
-            <div class="standings-rows"></div>
-        </div>
+        </section>
 
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
