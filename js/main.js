@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('#example').append(example);
 
     // Still trying to figure out the authentication for the ajax call which is currently not working and throwing some bad js errors
-    // getData();
+    getData();
 
 });
 
@@ -29,13 +29,11 @@ function getData() {
         dataType: 'json',
         async: false,
         headers: {
-            "Authorization": "Basic " + btoa("kmtate" + ":" + "mkjointrepo2832")
-            // "Authorization": "Basic" + "b604851b-0f22-4982-a034-675c03" + ":" + "mkjointrepo2832",
+            "Authorization": "Basic " + btoa("b604851b-0f22-4982-a034-675c03" + ":" + "mkjointrepo2832")
         },
-        data: '{ "comment" }',
+        //data: '{ "comment" }',
         success: function (data){
-            // console.log(data);
-            alert('Thanks for your comment!');
+            console.log(data);
         }
     });
 };
